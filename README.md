@@ -78,17 +78,17 @@ Leer atentamente el warning informado por el compilador. Abrir el código con Vi
 
 #### 2.1. Ejecutar con un here-document
 
-Ejecutar el programa entregando el valor `75` mediante un here-document con `<<`. Comprobar la salida y consultar inmediatamente el código entregado por el programa.
+Ejecutar el programa entregando el valor `75`. Comprobar la salida y consultar inmediatamente el código entregado por el programa.
 
 #### 2.2. Separar los canales de salida
 
-El archivo `tests/error.in` contiene una entrada inválida. Ejecutar el programa utilizando ese archivo como `stdin`, guardar `stdout` en `tests/error.out` y guardar `stderr` en `tests/error.err`.
+El archivo `tests/error.in` contiene una entrada inválida. Ejecutar el programa utilizando ese archivo como `stdin`, guardar `stdout` en `tests/error.out` y guardar `stderr` en `tests/error.err` (recuerde el uso de `>` y `2>`).
 
 Consultar inmediatamente el código de salida. Comprobar que `error.out` esté vacío y que `error.err` contenga el mensaje correspondiente.
 
 #### 2.3. Agregar resultados a un archivo
 
-Crear `tests/registro.out` con el resultado de ejecutar el programa para la carga `50`. Luego utilizar `>>` para agregar al mismo archivo el resultado correspondiente a la carga `700`.
+Crear `tests/registro.out` con el resultado de ejecutar el programa para la carga `50`. Luego utilizar `>>` para agregar al mismo archivo el resultado correspondiente a la carga `700` (Recuerde en que de diferencia `>` de `>>`).
 
 Inspeccionar `registro.out` y comprobar que conserve ambos resultados en el orden en que fueron ejecutados.
 
@@ -109,7 +109,7 @@ Construir el comando necesario para ejecutar la suite. Inicialmente se observar�
 Inspeccionar la entrada, el resultado esperado, el resultado obtenido y la especificación para cada prueba que falla.
 
 - Uno de los casos evidencia una condición de borde incorrecta en el programa
-- Otro caso contiene un resultado esperado incorrecto
+- Otro caso contiene un resultado esperado incorrecto (osea, el contenido de su correspondiente `.expected` no corresponde a la salida que el programa funcionando correctamente debería entregar)
 
 Corregir cada archivo responsable con Vim. Cuando se modifique `carga.c`, volver a compilar antes de repetir la suite.
 
